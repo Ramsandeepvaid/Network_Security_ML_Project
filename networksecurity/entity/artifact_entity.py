@@ -1,0 +1,17 @@
+'''
+An artifact entity in a machine learning or data pipeline project is typically a data structure (often a class or dataclass) that represents the outputs ("artifacts") produced by different pipeline steps.
+
+For example, after data preprocessing, model training, or evaluation, you might want to store:
+
+File paths to saved models or datasets
+Metrics (accuracy, loss, etc.)
+Configuration details
+Any other outputs needed for later steps
+By defining an artifact entity (using a @dataclass), you can easily pass these outputs between pipeline components in a structured and type-safe way.'''
+
+from dataclasses import dataclass
+@dataclass
+class DataIngestionArtifact:
+ trained_file_path:str
+ test_file_path:str
+
