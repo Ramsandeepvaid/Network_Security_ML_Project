@@ -24,6 +24,12 @@ from sklearn.ensemble import(
     RandomForestClassifier,
 )
 
+##By using dagshub we can track our experiments in a remote repository 
+##isse koi bhi banda ab hmare experiments ko dekh skega hence increasing collaboration and ease of code tracking
+import dagshub
+dagshub.init(repo_owner='ramsandeepvaid', repo_name='my-first-repo', mlflow=True)
+
+
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
         '''init function bnaya'''
@@ -118,7 +124,7 @@ class ModelTrainer:
 
         Network_Model=NetworkModel(preprocessor=preprocessor,model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
-        #model pusher
+        #model pusher Pushes the final model to final_model folder u can push it anywhere 
         save_object("final_model/model.pkl",best_model)
         
 

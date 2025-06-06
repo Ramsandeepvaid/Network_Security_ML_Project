@@ -4,11 +4,15 @@ numpy
 pymongo
 certifi
 dotenv
-pymongo[srv]==3.6
+pymongo
 scikit-learn
 dill
 mlflow
 pyaml
+dagshub
+fastapi
+uvicorn
+python-multipart
 
 
 ##-e .
